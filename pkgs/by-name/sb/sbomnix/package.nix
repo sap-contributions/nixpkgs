@@ -30,14 +30,14 @@ python3.pkgs.buildPythonApplication (finalAttrs: {
     "--prefix"
     "PATH"
     ":"
-    (lib.makeBinPath [
+    "${lib.makeBinPath [
       git
       nix
       python3.pkgs.graphviz
       nix-visualize
       vulnix
       grype
-    ])
+    ]}"
   ];
 
   build-system = [ python3.pkgs.setuptools ];
